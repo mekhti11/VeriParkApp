@@ -52,6 +52,8 @@ class MainActivity : AppCompatActivity() {
             }
             btn_imkb.isEnabled = true
             Log.d("Handshake", "observeHandshakeData: ${handshake.authorization}")
+            Log.d("Handshake", "observeHandshakeData: ${handshake.aesIV}")
+            Log.d("Handshake", ": ${handshake.aesKey}")
         })
 
         viewModel.error.observe(this,{ error ->
