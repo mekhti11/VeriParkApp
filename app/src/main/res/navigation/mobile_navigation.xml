@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/nav_home">
+
+    <fragment
+        android:id="@+id/nav_home"
+        android:name="tr.com.mekhti.veriparkapp.view.ui.home.HomeFragment"
+        android:label="@string/menu_home"
+        tools:layout="@layout/fragment_home" />
+
+    <fragment
+        android:id="@+id/nav_gallery"
+        android:name="tr.com.mekhti.veriparkapp.view.ui.gallery.GalleryFragment"
+        android:label="@string/menu_gallery"
+        tools:layout="@layout/fragment_gallery" />
+
+    <fragment
+        android:id="@+id/nav_slideshow"
+        android:name="tr.com.mekhti.veriparkapp.view.ui.slideshow.SlideshowFragment"
+        android:label="@string/menu_slideshow"
+        tools:layout="@layout/fragment_slideshow" />
+    <fragment
+        android:id="@+id/hacmeGore30Fragment"
+        android:name="tr.com.mekhti.veriparkapp.view.ui.hacmegore30.HacmeGore30Fragment"
+        android:label="fragment_hacme_gore30"
+        tools:layout="@layout/fragment_hacme_gore30" />
+    <fragment
+        android:id="@+id/hacmeGore50Fragment2"
+        android:name="tr.com.mekhti.veriparkapp.view.ui.hacmegore50.HacmeGore50Fragment"
+        android:label="fragment_hacme_gore50"
+        tools:layout="@layout/fragment_hacme_gore50" />
+    <fragment
+        android:id="@+id/hacmeGore100Fragment2"
+        android:name="tr.com.mekhti.veriparkapp.view.ui.hacmegore100.HacmeGore100Fragment"
+        android:label="fragment_hacme_gore100"
+        tools:layout="@layout/fragment_hacme_gore100" />
+</navigation>
