@@ -1,9 +1,7 @@
 package tr.com.mekhti.veriparkapp.view
 
 import android.os.Bundle
-import android.util.Log
 import android.view.Menu
-import com.google.android.material.snackbar.Snackbar
 import com.google.android.material.navigation.NavigationView
 import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
@@ -12,16 +10,13 @@ import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.appcompat.app.AppCompatActivity
-import androidx.lifecycle.ViewModelProvider
 import tr.com.mekhti.veriparkapp.R
 import tr.com.mekhti.veriparkapp.databinding.ActivityStocksBinding
-import tr.com.mekhti.veriparkapp.viewmodel.StocksViewModel
 
 class StocksActivity : AppCompatActivity() {
 
     private lateinit var appBarConfiguration: AppBarConfiguration
     private lateinit var binding: ActivityStocksBinding
-    private lateinit var viewModel : StocksViewModel
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -44,10 +39,6 @@ class StocksActivity : AppCompatActivity() {
         setupActionBarWithNavController(navController, appBarConfiguration)
         navView.setupWithNavController(navController)
 
-        viewModel = ViewModelProvider(this).get(StocksViewModel::class.java)
-        viewModel.stocks.observe(this,{ stocks ->
-            Log.d("TAG", "onCreate: ${stocks.stocks.size}")
-        })
     }
 
 

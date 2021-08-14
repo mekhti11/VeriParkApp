@@ -19,10 +19,10 @@ class DecEncAes {
         }
 
 
-        fun decrypt(cipherText: ByteArray?, aesKey: ByteArray?, aesIV: ByteArray?): String? {
+        fun decrypt(cipherText: ByteArray?,): String {
             val cipher = Cipher.getInstance("AES/CBC/PKCS7Padding")
-            val keySpec = SecretKeySpec(Base64.getDecoder().decode(aesKey), "AES")
-            val ivSpec = IvParameterSpec(Base64.getDecoder().decode(aesIV))
+            val keySpec = SecretKeySpec(Base64.getDecoder().decode(HandshakeData.aesKey.toByteArray()), "AES")
+            val ivSpec = IvParameterSpec(Base64.getDecoder().decode(HandshakeData.aesIV.toByteArray()))
             cipher.init(Cipher.DECRYPT_MODE, keySpec, ivSpec)
             val decryptedText = cipher.doFinal(Base64.getDecoder().decode(cipherText))
             return String(decryptedText)

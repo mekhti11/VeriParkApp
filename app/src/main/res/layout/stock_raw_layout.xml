@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+            name="stock"
+            type="tr.com.mekhti.veriparkapp.model.Stock" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="60dp">
+        <LinearLayout
+            android:id="@+id/linearLayout"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:orientation="horizontal"
+            android:weightSum="7"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TextView
+                android:id="@+id/txtSymbol"
+                android:textSize="17sp"
+                decodeSymbol="@{stock.symbol}"
+                android:layout_width="60dp"
+                android:layout_height="25dp"
+                android:layout_marginEnd="4dp" />
+            <TextView
+                android:id="@+id/txtFiyat"
+                android:textSize="17sp"
+                setDoubleValue="@{stock.price}"
+                android:gravity="center"
+                android:layout_width="50dp"
+                android:layout_height="25dp"
+                android:layout_marginEnd="4dp" />
+            <TextView
+                android:id="@+id/txtFark"
+                android:textSize="17sp"
+                setDoubleValue="@{stock.difference}"
+                android:gravity="center"
+                android:layout_width="50dp"
+                android:layout_height="25dp"
+                android:layout_marginEnd="4dp" />
+            <TextView
+                android:id="@+id/txtHacim"
+                android:textSize="17sp"
+                setDoubleValue="@{stock.volume}"
+                android:gravity="center"
+                android:maxWidth="62dp"
+                android:minHeight="55dp"
+                android:layout_width="50dp"
+                android:layout_height="25dp"
+                android:layout_marginEnd="4dp" />
+            <TextView
+                android:id="@+id/txtAlis"
+                android:textSize="17sp"
+                setDoubleValue="@{stock.bid}"
+                android:gravity="center"
+                android:layout_width="50dp"
+                android:layout_height="25dp"
+                android:layout_marginEnd="2dp" />
+            <TextView
+                android:id="@+id/txtSatis"
+                android:textSize="17sp"
+                setDoubleValue="@{stock.offer}"
+                android:layout_width="45dp"
+                android:layout_height="25dp"
+                android:gravity="center"
+                android:layout_marginEnd="2dp" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+
+                <ImageView
+                    android:id="@+id/imageDegisim"
+                    android:src="@{stock.up ? @drawable/up_green : @drawable/down_red}"
+                    android:scaleType="centerCrop"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"/>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </LinearLayout>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

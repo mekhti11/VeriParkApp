@@ -2,21 +2,115 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/filter"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".view.ui.home.HomeFragment">
 
-    <TextView
-        android:id="@+id/text_home"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
+    <EditText
+        android:id="@+id/editTextFilter"
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="16dp"
         android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:textAlignment="center"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginEnd="16dp"
+        android:background="@drawable/edit_text_bg"
+        android:ems="10"
+        android:inputType="text"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:orientation="horizontal"
+        android:weightSum="7"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextFilter">
+
+        <TextView
+            android:id="@+id/txtSymbolAdapter"
+            android:textSize="17sp"
+            android:text="Sembol"
+            android:layout_width="60dp"
+            android:layout_height="25dp"
+            android:layout_marginEnd="4dp" />
+        <TextView
+            android:id="@+id/txtFiyatAdapter"
+            android:textSize="17sp"
+            android:text="Fiyat"
+            android:gravity="center"
+            android:layout_width="50dp"
+            android:layout_height="25dp"
+            android:layout_marginEnd="4dp" />
+        <TextView
+            android:id="@+id/txtFarkAdapter"
+            android:textSize="17sp"
+            android:text="Fark"
+            android:gravity="center"
+            android:layout_width="50dp"
+            android:layout_height="25dp"
+            android:layout_marginEnd="4dp" />
+        <TextView
+            android:id="@+id/txtHacimAdapter"
+            android:textSize="17sp"
+            android:text="Hacim"
+            android:gravity="center"
+            android:maxWidth="62dp"
+            android:minHeight="55dp"
+            android:layout_width="50dp"
+            android:layout_height="25dp"
+            android:layout_marginEnd="4dp" />
+        <TextView
+            android:id="@+id/txtAlisAdapter"
+            android:textSize="17sp"
+            android:text="Alış"
+            android:gravity="center"
+            android:layout_width="50dp"
+            android:layout_height="25dp"
+            android:layout_marginEnd="2dp" />
+        <TextView
+            android:id="@+id/txtSatisAdapter"
+            android:textSize="17sp"
+            android:text="Satış"
+            android:layout_width="45dp"
+            android:layout_height="25dp"
+            android:gravity="center"
+            android:layout_marginEnd="2dp"
+            android:layout_marginRight="2dp" />
+
+        <TextView
+            android:id="@+id/imageDegisimAdapter"
+            android:text="Değişim"
+            android:maxWidth="100dp"
+            android:minHeight="100dp"
+            android:gravity="center"
+            android:textSize="17sp"
+            android:layout_width="70dp"
+            android:layout_height="25dp"
+            />
+    </LinearLayout>
+
+    <View
+        android:layout_width="0dp"
+        android:layout_height="1dp"
+        android:layout_marginTop="3dp"
+        android:background="@color/line_color"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/linearLayout"/>
 </androidx.constraintlayout.widget.ConstraintLayout>
