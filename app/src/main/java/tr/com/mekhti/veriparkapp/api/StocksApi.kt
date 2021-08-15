@@ -21,7 +21,7 @@ interface StocksApi {
     @Headers("Content-Type: application/json")
     @POST("detail")
     fun getStockDetail(
-        @Header(value = "X-VP-Authorization:") auth:String = HandshakeData.authorization,
+        @Header(value = "X-VP-Authorization") auth:String = HandshakeData.authorization,
         @Body body : HashMap<String, String>
     ): Call<StockDetail>
 }

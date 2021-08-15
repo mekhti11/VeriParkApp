@@ -66,6 +66,7 @@ class HacmeGore30Fragment : Fragment() {
     private fun observeStocksList() {
         viewModel.stocks.observe(viewLifecycleOwner,{ stocks ->
             adapter.setData(stocks.stocks)
+            mStocks = stocks
         })
     }
 
